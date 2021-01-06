@@ -6,6 +6,7 @@ It is also expandable and other data can be added.
 
 ## Dependencies
 github.com/abkhan/opentsdb-httpclient
+
 github.com/abkhan/config
 
 ## Usage
@@ -29,3 +30,27 @@ Get a function from gomonts to add metrics to tsdb, by supplying it with;
 ```
 
 This will create a metric name `app-name.ping`, where app-name is the name used in GoMoInit function.
+
+### TSDB Config
+
+```
+tsdb:
+  host: 192.168.0.139
+  port: 4242
+  defaultBuffer: 1
+  defaultInterval: 1
+  metric: conn
+  http:
+    dialTimeout: 3s
+    tlsHandShakeTimeout: 3s 
+    maxIdleConnsPerHost: 20
+    maxIdleConns: 20
+    idleConnTimeout: 2m   
+    clientTimeout: 5s  
+```
+
+### Example app that uses this package
+githut.com/abkhan/conntest
+
+## Dev Status
+Work in progress, bugs expected, enhancements needed.

@@ -46,10 +46,8 @@ func GoMoInit(a, v string, c tsdb.Conf) AddFunc {
 	pid = os.Getpid()
 	pids = strconv.Itoa(pid)
 
-	//go runMonitor(md)
-	//go runInfo(sd, rk)
-
-	tags := []tsdb.Tag{{Key: "app", Value: app},
+	tags := []tsdb.Tag{
+		{Key: "app", Value: app},
 		{Key: "host", Value: host},
 		{Key: "id", Value: pids},
 	}
@@ -124,7 +122,8 @@ func runMonitor(d time.Duration) {
 
 func runInfo(d time.Duration, rks []string) {
 
-	tags := []tsdb.Tag{{Key: "app", Value: app},
+	tags := []tsdb.Tag{
+		{Key: "app", Value: app},
 		{Key: "version", Value: ver},
 		{Key: "host", Value: host},
 		{Key: "id", Value: pids},
