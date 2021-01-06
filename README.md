@@ -50,7 +50,7 @@ tsdb:
 ```
 
 ### Example app that uses this package
-githut.com/abkhan/conntest
+github.com/abkhan/conntest
 
 ## Dev Status
 Work in progress, bugs expected, enhancements needed.
